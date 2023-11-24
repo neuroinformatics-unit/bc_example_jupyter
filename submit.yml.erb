@@ -1,5 +1,18 @@
+<%-
+  slurm_args = if use_gpu.to_i == 1
+                 ["--gres", "gpu:" + num_gpu ]
+               else
+                 []
+               end
+-%>
+
 ---
 batch_connect:
   template: "vnc"
   cluster: SWC
+script:
+  native:
+    <%- slurm_args.each do |arg| %>
+      - "<%= arg %>"
+    <%- end %>
 

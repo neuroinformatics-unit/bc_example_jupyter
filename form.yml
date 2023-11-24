@@ -7,14 +7,24 @@ form:
   - bc_num_hours
   - bc_num_slots
   - bc_queue
+  - use_gpu
+  - num_gpu
 attributes:
   modules: "miniconda"
   environment: 
     help: "Specify your local conda environment, must have Jupyter installed"
   bc_num_slots:
+    label: "Number of CPU cores"
     value: 1
     min: 1
     max: 28
     help: "Maximum is 28"
   bc_queue:
     help: "Choose among: cpu, gpu, medium, fast"
+  use_gpu:
+    label: "Do you want to use GPUs?"
+    widget: check_box
+    checked_value: 1
+    unchecked_value: 0
+  num_gpu:
+    label: "Number of GPU cores"
