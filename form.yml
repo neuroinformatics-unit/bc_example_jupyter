@@ -5,8 +5,8 @@ form:
   - environment
   - extra_jupyter_args
   - bc_num_hours
-  - node_type
   - bc_num_slots
+  - bc_queue
 attributes:
   modules: "miniconda"
   environment: 
@@ -16,4 +16,5 @@ attributes:
     min: 1
     max: 28
     help: "Maximum is 28"
-
+  bc_queue:
+    help: "Choose among: cpu, gpu, medium, fast"

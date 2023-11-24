@@ -16,9 +16,12 @@ module purge
 
 # Load the require modules
 module load <%= context.modules %>
+# Loading also SLEAP to debug cuda problems
+module load SLEAP 
 
 # List loaded modules
 module list
+echo "module list"
 <%- end -%>
 
 # Activate the environment
