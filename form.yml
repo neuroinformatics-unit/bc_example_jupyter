@@ -1,15 +1,19 @@
 ---
 cluster: "SWC"
-attributes:
-  modules: "miniconda"
-  extra_jupyter_args: ""
-
-# These attributes are currently not displayed, to be investigated
 form:
   - modules
+  - environment
   - extra_jupyter_args
-  - bc_account
-  - bc_queue
   - bc_num_hours
+  - node_type
   - bc_num_slots
-  - bc_email_on_started
+attributes:
+  modules: "miniconda"
+  environment: 
+    help: "Specify your local conda environment, must have Jupyter installed"
+  bc_num_slots:
+    value: 1
+    min: 1
+    max: 28
+    help: "Maximum is 28"
+
